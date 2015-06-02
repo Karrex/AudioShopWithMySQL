@@ -10,10 +10,10 @@ import java.sql.Statement;
  */
 public class DaoFacade {
     private final AlbumDao albumDao;
-    private final AudioDao audioDao = new AudioDao();
-    private final AuthorDao authorDao = new AuthorDao();
-    private final GenreDao genreDao = new GenreDao();
-    private final OrderDao orderDao = new OrderDao();
+    private final AudioDao audioDao;
+    private final AuthorDao authorDao;
+    private final GenreDao genreDao;
+    private final OrderDao orderDao;
 
     private Connection connection;
     private Statement statement;
@@ -38,6 +38,10 @@ public class DaoFacade {
             e.printStackTrace();
         }
         albumDao = new AlbumDao(connection, statement);
+        authorDao = new AuthorDao(connection, statement);
+        genreDao = new GenreDao(connection, statement);
+        audioDao = new AudioDao(connection, statement);
+        orderDao = new OrderDao(connection, statement);
     }
 
     public AlbumDao getAlbumDao() {

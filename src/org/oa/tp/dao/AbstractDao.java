@@ -9,13 +9,13 @@ import java.util.List;
 public interface AbstractDao<T> {
     List<T> loadAll();
 
-    T findById();
+    T findById(long objectId);
 
     boolean delete(int objectId);
 
     boolean update(T changed);
 
-    boolean add(T add);
+    boolean add(T item);
 
     boolean addAll(Collection<T> collection);
 }
