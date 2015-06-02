@@ -9,20 +9,19 @@ import java.sql.Statement;
  * Created by Eugene on 02.06.2015.
  */
 public class DaoFacade {
+    private static final String URL = "jdbc:mysql://localhost:3306/test";
+    private static final String USER_NAME = "root";
+    private static final String PASSWORD = "toor";
     private final AlbumDao albumDao;
     private final AudioDao audioDao;
     private final AuthorDao authorDao;
     private final GenreDao genreDao;
     private final OrderDao orderDao;
-
     private Connection connection;
     private Statement statement;
 
     public DaoFacade() {
         try {
-            final String URL = "jdbc:mysql://localhost:3306/test";
-            final String USER_NAME = "root";
-            final String PASSWORD = "toor";
             connection = DriverManager.getConnection(URL, USER_NAME, PASSWORD);
         } catch (SQLException e) {
             e.printStackTrace();
