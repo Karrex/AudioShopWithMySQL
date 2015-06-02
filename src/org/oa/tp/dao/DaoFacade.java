@@ -20,10 +20,10 @@ public class DaoFacade {
 
     public DaoFacade() {
         try {
-            final String url = "jdbc:mysql://localhost:3306/test";
-            final String userName = "root";
-            final String password = "toor";
-            connection = DriverManager.getConnection(url, userName, password);
+            final String URL = "jdbc:mysql://localhost:3306/test";
+            final String USER_NAME = "root";
+            final String PASSWORD = "toor";
+            connection = DriverManager.getConnection(URL, USER_NAME, PASSWORD);
         } catch (SQLException e) {
             e.printStackTrace();
         }
